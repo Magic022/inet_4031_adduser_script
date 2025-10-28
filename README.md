@@ -3,7 +3,6 @@
 ## Program Description
 This Python program automates the process of adding multiple users and groups to an Ubuntu system. Normally, a system administrator would manually run commands such as `adduser`, `passwd`, and `usermod` to create each account, set passwords, and assign users to groups. This script performs all of these tasks automatically by reading from an input file, eliminating repetitive manual work and reducing the chance of errors. Administrators can efficiently provision multiple accounts on a server with a single command.
 
----
 
 ## Program User Operation
 The script reads a list of user accounts and group assignments from a structured input file and executes system commands to create users, set passwords, and assign group memberships. The user must prepare the input file and then run the script either in a "dry run" mode to verify the actions or in full execution mode to actually create the users.
@@ -18,15 +17,12 @@ The input file is a colon-delimited text file with **five fields per line** in t
 5. **Groups** – A comma-separated list of supplemental groups the user should belong to. If a user should not belong to any additional groups, use a single `-`.  
 
 **Special instructions:**
-
 - To skip a line, start the line with `#`.  
 - Lines that do not contain exactly five fields are ignored automatically by the script.
 
----
-
 ### Command Execution
 Before running the script, ensure it is executable:  
-```bash
+bash
 chmod +x create-users.py
 Run the script by redirecting the input file:
 
